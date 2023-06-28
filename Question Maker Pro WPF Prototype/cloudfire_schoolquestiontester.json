@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "schoolquestiontester",
+  "private_key_id": "2faf3ca8e27114efffdd06d555af74df8f7a6403",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCsEPK3UAxSj25B\nfY8BVcjuUuhT4jCxzO0C+JnDaaCTdFVpP2fvB0kHVam2MNUsd1oelTLhvgjpnpuS\n39kfcGvT2MesfSU/HopeYOBL/ejZmAQOfX1ou8F6MpBfOlReAlbzuNyYhpmHzj07\nAmal5kJe/QztHOJ0fy1XlW42bpBEw82Kd+BGQuEYx5XhW6I/c8GPl+uze1OTSidp\nZyaqCfTXn3JjSVyHTrWMyFLV81xyhDVTvw9mnOGOzUQKJbshbkK3vsNjFkE+EiVN\nxtdhP3ZD6xxGfV7tHlFn7ml07WdrChyrZAz23hy1i/wQIhNC/StokrinzqSs8CYo\nlWy89wbPAgMBAAECggEAC9M+WwrNTf89fJK8eUMEBBz+ioVJA28p+sJLDvr7Zibg\nl9MbuXmusypX94VzoRKyxtdKH+mHg0a7OmTX7ykyv+RuFJSlMqlOqR3PTGmuzwV7\ngeNt8vy0V0mSUnkXwz4165oQzwqxEnxCCQQpOc2RUiXh9Ym+pnL3EsXaRTNkBtWx\nNtE4kodp4dJok7+U/8BnHssGNiFYiaDl53fC41hOiT5cY1+VqNn2TwdB90XijXhq\npIOgUogCS8tY2AmZNr6uRnk3OF7BE33UDDgLJ2GEF4HDo8zbAli1OxWmh4BzzXeN\nw5S8wmZzY/53nTA82MlUyQ5b4/UL2V7aGuMVjiO6wQKBgQDXjb2bghlvgMkY8dwI\nMT08evp6ceN6akfQAmdRrz2c7EPH+nOAZ/A6PjDpYM90cLKXq1s9nOGI8MkB2X6E\nR0xzxwZ1Qdt/vZa2WOgZmLIRxO8QZ/CuTOpq0pW+DPtuTw+EF8e96E1KCtii82Ot\n1HlxOLW/AjRynDnqtYZ8QNd4IwKBgQDMWkJCu/pbspPzQ5w0sZm1x6XMIcnxFzGo\nUcLEbwWHk1JAXT3t1NGR/G2Fu6DYz6Hdfb7w0BQxwEDs960N6LBNDk4I7JlAsTK0\n3XKOhs8gr8KTDkQBJ35/JjvuaOmZvTWGNcx9CARxrN5XFe56vqWDfIep8QfKe2oZ\nP2GrwSprZQKBgDEwBAN3daxvG/SYRFiOO+YQPhYw5PLrS8XYtpD6RzoG5BS/Pxof\nHb98r5ah49UzXl2j2ac+pGymXYgRhIBU8Mo+sWeShq8oqTqlIRmuMXxCjzcUMOTl\nYlzL/yWmOr3aRrUi5A6e8vwha3wLxERHhwriIP8cVrGMmt7HW5ABD+o3AoGBAI5G\nGPPVZE0LW652V/7n15iT0373110fRNdndS7GDReDHjTptgArt2zoTmhZZXcNuCg5\nMAMBG843h/xzw+x3IKfFWdckwt4jgKYjt2o7uWGMfO9dc0NKd+uWdwtZx6nd7bHv\nKtuyBUYPkQ0Ym9yhdyLARMOwqDf1DL1fP2URK7NxAoGAQre8z9TOC+hJ02VtDGh7\nNUvq4MSFsL3ffGWeOK10O9yT7DRz07YAXebyk1bhQL7sEuAMaSi9vUJm90WoDtuH\n+yMM4VXDbZd1KXjI3xjFo5gdLrMzgXCFk35sdjN7JUC7+oRjiaYErQbttlg+irCe\nyxZpBdeWOp56tis84WOzs/c=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-67rdb@schoolquestiontester.iam.gserviceaccount.com",
+  "client_id": "115714386805657913674",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-67rdb%40schoolquestiontester.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

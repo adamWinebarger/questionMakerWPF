@@ -1,0 +1,48 @@
+﻿<Page x:Class="Question_Maker_Pro_WPF_Prototype.Pages.NewTesterInfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Question_Maker_Pro_WPF_Prototype.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="NewTesterInfoPage">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1" Content="Input Patient Info" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36pt" FontWeight="Bold"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="firstNameTextBox" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" 
+                     Margin="25,61,25,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="12pt"/>
+            <Label Content="First Name" HorizontalAlignment="Center" Margin="-25,35,25,0" VerticalAlignment="Top" FontSize="12pt"/>
+
+            <TextBox x:Name="lastNameTextBox" Grid.Column="1" HorizontalAlignment="Center" Margin="0,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="12pt"/>
+            <Label Content="Last Name" Grid.Column="1" HorizontalAlignment="Center" Margin="-40,35,0,0" VerticalAlignment="Top" FontSize="12pt"/>
+
+            <DatePicker x:Name="dobPicker" Grid.Column="1" HorizontalAlignment="Center" Margin="0,256,0,0" VerticalAlignment="Top" FontSize="12pt"/>
+            <Label Grid.Column="1" Content="Date of Birth" HorizontalAlignment="Center" Margin="-40,230,0,0" VerticalAlignment="Top" FontSize="12pt"/>
+            
+            <Label Grid.Column="2" Content="Gender" HorizontalAlignment="Left" Margin="67,35,0,0" VerticalAlignment="Top" FontSize="12pt"/>
+            <RadioButton x:Name="maleRadioButton" Grid.Column="2" Content="Male" HorizontalAlignment="Left" Margin="71,65,25,0" VerticalAlignment="Top" FontSize="12pt"/>
+            <RadioButton x:Name="femaleRadioButton" Grid.Column="2" Content="Female" HorizontalAlignment="Left" Margin="71,90,25,0" VerticalAlignment="Top" FontSize="12pt"/>
+            <RadioButton x:Name="otherRadioButton" Grid.Column="2" Content="Other" HorizontalAlignment="Left" Margin="71,115,25,0" VerticalAlignment="Top" FontSize="12pt"/>
+            <Button x:Name="submitButton" Grid.Column="2" Content="Submit" HorizontalAlignment="Center" Margin="25,285,25,25" Padding="2" VerticalAlignment="Top" Click="submitButton_Click"/>
+
+
+
+        </Grid>
+
+
+    </Grid>
+
+</Page>

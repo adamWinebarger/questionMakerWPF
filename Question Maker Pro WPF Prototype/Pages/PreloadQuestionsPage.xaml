@@ -1,0 +1,33 @@
+﻿<Page x:Class="Question_Maker_Pro_WPF_Prototype.Pages.PreloadQuestionsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Question_Maker_Pro_WPF_Prototype.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PreloadQuestionsPage">
+
+    <Grid Background="#e9ecef">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="1" Content="Pre-build Question List" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36pt" FontWeight="Bold"/>
+
+        <TextBox x:Name="questionTextBlock" Background="White" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="160" Width="668" Margin="0,70,0,0"/>
+        <Label x:Name="questionNumberLabel" Content="Input question #1:" FontSize="12pt" HorizontalAlignment="Left" Margin="66,37,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+
+
+        <ComboBox x:Name="currentQuestionComboBox" HorizontalAlignment="Left" Margin="647,26,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" SelectionChanged="questionComboBoxSelectionChanged"/>
+        <Label Content="Jump to Question #" HorizontalAlignment="Left" Margin="647,0,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+
+        <Button x:Name="addQuestionButton" Content="Add Question" HorizontalAlignment="Left" Margin="593,278,0,0" Grid.Row="1" Padding="2" VerticalAlignment="Top" Click="button_Click"/>
+        <Button x:Name="submitButton" Content="Finish" HorizontalAlignment="Left" Margin="698,278,0,0" Grid.Row="1" Padding="2" MinWidth="65" VerticalAlignment="Top" Click="button_Click"/>
+        <Button x:Name="insertButton" Content="Insert" HorizontalAlignment="Left" Margin="492,278,0,0" Grid.Row="1" Padding="2" VerticalAlignment="Top" MinWidth="65" Click="button_Click"/>
+        <Button x:Name="replaceButton" Content="Replace" HorizontalAlignment="Left" Margin="386,278,0,0" Grid.Row="1" Padding="2" VerticalAlignment="Top" MinWidth="65" Click="button_Click"/>
+        <Button x:Name="removeButton" Content="Remove" HorizontalAlignment="Left" Margin="292,278,0,0" Grid.Row="1" Padding="2" VerticalAlignment="Top" MinWidth="65" Click="button_Click"/>
+
+    </Grid>
+</Page>
