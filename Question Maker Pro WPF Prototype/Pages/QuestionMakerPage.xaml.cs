@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Google.Cloud.Firestore;
+using System.Text.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Question_Maker_Pro_WPF_Prototype.Pages
 {
@@ -192,7 +194,10 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
         /* Methods pertaining to Firebase Documents */
         void addPatientInfoDocument()
         {
-            Google.Cloud.Firestore.DocumentReference collection = K.database.Collection("Users/Test/Patients")
+            //var jsonText = JsonDocument.Parse(File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"cloudfire_schoolquestiontester.json")).RootElement.GetProperty("private_key_id");
+            //MessageBox.Show(jsonText.ToString());
+
+            Google.Cloud.Firestore.DocumentReference collection = K.database.Collection("Patients")
                 .Document( String.Format("{0}, {1} ({2})", patient!.lastname, 
                 patient!.firstname, patient!.patientCode));
             //MessageBox.Show(patient!.patientCode);
@@ -204,11 +209,14 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
                 { "dateOfBirth", patient!.dateOfBirth.ToString() },
                 { "age", patient.age },
                 { "Gender", patient.gender.ToString() },
-                { "Questions", questionList }
+                { "Questions", questionList },
+                { "AdministratorCode", K.adminKey.ToString() }
             };
             collection.SetAsync(patientData);
             
             MessageBox.Show("data added successfully");
+            NavigationService.RemoveBackEntry();
+            NavigationService.GoBack();
         }
 
 

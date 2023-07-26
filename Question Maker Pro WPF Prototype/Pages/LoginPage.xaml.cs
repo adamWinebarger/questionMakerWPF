@@ -33,8 +33,8 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
             string path = AppDomain.CurrentDomain.BaseDirectory + @"cloudfire_schoolquestiontester.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            FirestoreDb db = FirestoreDb.Create("TestDatabase");
-            MessageBox.Show("Succss");
+            FirestoreDb db = FirestoreDb.Create("schoolquestiontester");
+            MessageBox.Show("Success");
         }
     }
 }

@@ -74,7 +74,7 @@ namespace Question_Maker_Pro_WPF_Prototype
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
             FirestoreDb db = FirestoreDb.Create("schoolquestiontester");
-            //MessageBox.Show("Succss");
+            MessageBox.Show("Succss");
             return db;
         }
     }
