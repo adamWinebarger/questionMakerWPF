@@ -30,10 +30,11 @@ namespace Question_Maker_Pro_WPF_Prototype
             patientCode = sha256Hash();
         }
 
-        public string sha256Hash(string additionalText = "")
+        public string sha256Hash()
         {
             string plainText = String.Format("{0}, {1} - {2}, {3} {4}", lastname, 
-                firstname, gender.ToString(), dateOfBirth.ToString(), additionalText);
+                firstname, gender.ToString(), dateOfBirth.ToString(), DateTime.UtcNow
+                .ToString("yyyy'-'MMM'-'dd HH':'mm':'ss 'GMT' "));
             StringBuilder sb = new();
 
             using (var hash = SHA1.Create())

@@ -216,7 +216,11 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
             
             MessageBox.Show("data added successfully");
             NavigationService.RemoveBackEntry();
-            NavigationService.GoBack();
+            NavigationService.GoBack(); 
+            //Really, this probably won't work either and we're going to want to
+            //just go to the home page after naviagtion is done.
+            //then we just need to figure out at what point it destroys the old navigation pages
+            //so that we aren't using up all the memory on peoples' machines
         }
 
 
@@ -231,9 +235,10 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
 
         List<String> generateDefaultQuestionList()
         {
+            List<String> preloadQuestionList = new List<String>();
+
             if (File.Exists(Directory.GetCurrentDirectory() + "/PreloadQuestions.txt"))
             {
-                List<String> preloadQuestionList = new List<String>();
                 string[] lines = File.ReadAllLines(Directory.GetCurrentDirectory() + "/PreloadQuestions.txt");
                 foreach (string line in lines)
                 {
@@ -241,9 +246,9 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
                     preloadQuestionList.Add(line.Substring(dot + 1));
                 }
                 currentQuestionComboBox.SelectedIndex = 0;
-                return preloadQuestionList;
+
             }
-            return new List<String>();
+            return preloadQuestionList;
         }
 
     }
