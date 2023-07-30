@@ -51,3 +51,5 @@ C:\Users\adamk\source\repos\Question Maker Pro WPF Prototype\Question Maker Pro 
 C:\Users\adamk\source\repos\Question Maker Pro WPF Prototype\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\System.Linq.Async.dll
 C:\Users\adamk\source\repos\Question Maker Pro WPF Prototype\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype_Content.g.cs
 C:\Users\adamk\source\repos\Question Maker Pro WPF Prototype\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype.csproj.CopyComplete
+C:\Users\adamk\source\repos\Question Maker Pro WPF Prototype\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Pages\PatientDataPage.g.cs
+C:\Users\adamk\source\repos\Question Maker Pro WPF Prototype\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Pages\PatientDataPage.baml

@@ -57,6 +57,7 @@ namespace Question_Maker_Pro_WPF_Prototype
                  * program. We also might want to have some text boxes and buttons and things for search 
                  * parameters.
                  */
+                navframe.Navigate(new PatientDataPage(), UriKind.Relative);
             } else if (tag == preloadQuestionsButton.Content)
             {
                 //here's where we'll want to do load our page for preloading questions; and from there

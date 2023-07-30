@@ -13,6 +13,9 @@
     <Compile Update="Pages\NewTesterInfoPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\PatientDataPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\PreloadQuestionsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\NewTesterInfoPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\PatientDataPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\PreloadQuestionsPage.xaml">
