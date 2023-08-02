@@ -16,6 +16,7 @@ using System.IO;
 using Google.Cloud.Firestore;
 using System.Text.Json;
 using Newtonsoft.Json.Linq;
+using Question_Maker_Pro_WPF_Prototype.Enums;
 
 namespace Question_Maker_Pro_WPF_Prototype.Pages
 {
@@ -24,11 +25,15 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
     /// </summary>
     public partial class QuestionMakerPage : Page
     {
-        private Patient? patient = null;
-        //bool preload; //this will be so that we can use the same Page for creating question survey and generating new questions
-        List<String> questionList = new List<String>();
         bool preloadQuestion;
+        private Patient? patient = null;
+
+        //bool preload; //this will be so that we can use the same Page for creating question survey and generating new questions
+        List<String> teacherQuestionList = new List<String>(), 
+            parentQuestionList = new List<string>();
         int currentIndex = 0;
+        TestTypeSelection currentSelectedTestType = TestTypeSelection.Teacher;
+        bool saveButtonPressed = false;
 
         public QuestionMakerPage(Patient patient)
         {
@@ -36,20 +41,23 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
             this.patient = (Patient) patient;
             //MessageBox.Show(patient.lastname);
             this.preloadQuestion = false;
-            questionList = generateDefaultQuestionList();
+            teacherQuestionList = generateDefaultQuestionList("TeacherPreloadQuestions");
             populatequestionComboBox();
+            currentQuestionComboBox.SelectedIndex = 0;
         }
 
         public QuestionMakerPage(bool preloadQuestion = true)
         {
             InitializeComponent();
             this.preloadQuestion = preloadQuestion;
-            questionList = generateDefaultQuestionList();
+            teacherQuestionList = generateDefaultQuestionList("TeacherPreloadQuestions");
+            parentQuestionList = generateDefaultQuestionList("ParentPreloadQuestions");
             if (preloadQuestion)
             {
                 titleLabel.Content = "Pre-build Question List";
             }
             populatequestionComboBox();
+            currentQuestionComboBox.SelectedIndex = 0;
         }
 
         /* Methods pertaining to the buttons */
@@ -79,15 +87,32 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
 
         private void toggleButtonVisibility()
         {
-            removeButton.Visibility = (currentIndex == questionList.Count) ?
+            removeButton.Visibility = (currentIndex == teacherQuestionList.Count) ?
                 Visibility.Hidden : Visibility.Visible;
-            replaceButton.Visibility = (currentIndex == questionList.Count) ?
+            replaceButton.Visibility = (currentIndex == teacherQuestionList.Count) ?
                 Visibility.Hidden : Visibility.Visible;
-            insertButton.Visibility = (currentIndex == questionList.Count) ?
+            insertButton.Visibility = (currentIndex == teacherQuestionList.Count) ?
                 Visibility.Hidden : Visibility.Visible;
-            submitButton.Visibility = (questionList.Count > 0) ?
+            submitButton.Visibility = (teacherQuestionList.Count > 0) ?
                 Visibility.Visible : Visibility.Hidden;
         }
+
+        /*Radio button methods*/
+
+        private void radioButtonChecked(object sender, RoutedEventArgs e)
+        {
+            var tag = ((RadioButton)sender).Content;
+
+            if (tag == parentRadioButton.Content)
+                currentSelectedTestType = TestTypeSelection.Parent;
+            else if (tag == teacherRadioButton.Content)
+                currentSelectedTestType = TestTypeSelection.Teacher;
+            var listInQuestion = (currentSelectedTestType == TestTypeSelection.Teacher) ? teacherQuestionList : parentQuestionList;
+
+            //currentIndex = (currentIndex > listInQuestion.Count()) ? listInQuestion.Count() : currentIndex;
+            populatequestionComboBox();
+        }
+
 
 
         /* Stuff pertaining to the questions, buttons, etc. */
@@ -106,10 +131,10 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
 
             if (preloadQuestion)
             {
-                using (StreamWriter writer = File.CreateText(Directory.GetCurrentDirectory() + "/PreloadQuestions.txt"))
-                    for (int i = 0; i < questionList.Count; i++)
+                using (StreamWriter writer = File.CreateText(Directory.GetCurrentDirectory() + "Questions/TeacherPreloadQuestions.txt"))
+                    for (int i = 0; i < teacherQuestionList.Count; i++)
                     {
-                        writer.WriteLine(String.Format("{0}. {1}", i+1, questionList[i]));
+                        writer.WriteLine(String.Format("{0}. {1}", i+1, teacherQuestionList[i]));
                     }
             } else
             {
@@ -122,12 +147,14 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
 
         private void addQuestion()
         {
+            List<String> currentSelectedQuestionList = (currentSelectedTestType == TestTypeSelection.Teacher)
+                ? teacherQuestionList : parentQuestionList;
 
             if (questionIsValid())
             {
-                questionList.Add(questionTextBlock.Text);
+                currentSelectedQuestionList.Add(questionTextBlock.Text);
                 populatequestionComboBox();
-                currentIndex = questionList.Count;
+                currentIndex = currentSelectedQuestionList.Count;
                 currentQuestionComboBox.SelectedIndex = currentIndex;
                 questionTextBlock.Text = "";
             }
@@ -136,9 +163,12 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
 
         private void editQuestion()
         {
+            List<String> currentSelectedQuestionList = (currentSelectedTestType == TestTypeSelection.Teacher)
+                ? teacherQuestionList : parentQuestionList;
+
             if (questionIsValid())
             {
-                questionList[currentIndex] = questionTextBlock.Text;
+                currentSelectedQuestionList[currentIndex] = questionTextBlock.Text;
                 //populatequestionComboBox();
                 currentQuestionComboBox.SelectedIndex = ++currentIndex;
             }
@@ -146,9 +176,12 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
 
         private void insertQuestion()
         {
+            var questionListInQuestion = (currentSelectedTestType == TestTypeSelection.Teacher)
+                ? teacherQuestionList : parentQuestionList;
+
             if (questionIsValid())
             {
-                questionList.Insert(currentIndex, questionTextBlock.Text);
+                questionListInQuestion.Insert(currentIndex, questionTextBlock.Text);
                 int temp = ++currentIndex;
                 populatequestionComboBox();
                 currentQuestionComboBox.SelectedIndex = temp;
@@ -157,25 +190,56 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
 
         private void removeQuestion()
         {
+            var currentQuestionList = (currentSelectedTestType == TestTypeSelection.Teacher) ?
+                teacherQuestionList : parentQuestionList;
 
             if (questionIsValid())
             {
                 int temp = currentIndex;
-                questionList.RemoveAt(currentIndex);
+                currentQuestionList.RemoveAt(currentIndex);
                 populatequestionComboBox();
                 currentQuestionComboBox.SelectedIndex = temp;
             }
 
         }
 
+        List<String> generateDefaultQuestionList(string whichTest)
+        {
+            List<String> preloadQuestionList = new List<String>();
+
+            if (File.Exists(Directory.GetCurrentDirectory() + "/Questions/" + whichTest + ".txt"))
+            {
+                string[] lines = File.ReadAllLines(Directory.GetCurrentDirectory()
+                    + "/Questions/" + whichTest + ".txt");
+                foreach (string line in lines)
+                {
+                    int dot = line.IndexOf('.');
+                    preloadQuestionList.Add(line.Substring(dot + 1));
+                }
+                currentQuestionComboBox.SelectedIndex = 0;
+
+            }
+            return preloadQuestionList;
+        }
+
+        void updateQuestionTextBlock()
+        {
+           
+            var questionListInQuestion = (currentSelectedTestType == TestTypeSelection.Teacher)
+                ? teacherQuestionList : parentQuestionList;
+            questionNumberLabel.Content = String.Format("Input question #{0}:", currentIndex + 1);
+            questionTextBlock.Text = (currentIndex < questionListInQuestion.Count && currentIndex >= 0) ?
+                questionListInQuestion[currentIndex] : "";
+        }
+
         /*  Stuff pertaining to the combobox */
 
         private void questionComboBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            currentIndex = currentQuestionComboBox.SelectedIndex;
-            questionNumberLabel.Content = String.Format("Input question #{0}:", currentIndex + 1);
-            questionTextBlock.Text = (currentIndex < questionList.Count && currentIndex >= 0) ?
-                questionList[currentIndex] : "";
+
+            if (currentQuestionComboBox.HasItems)
+                currentIndex = currentQuestionComboBox.SelectedIndex;
+            updateQuestionTextBlock();
             toggleButtonVisibility();
 
         }
@@ -183,10 +247,19 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
         private void populatequestionComboBox()
         {
             currentQuestionComboBox.Items.Clear();
+            //currentIndex = 0;
 
-            for (int i = 0; i <= questionList.Count; i++)
+            List<String> questionListInQuestion =
+                (currentSelectedTestType == TestTypeSelection.Teacher) ? teacherQuestionList :
+                parentQuestionList;
+
+            for (int i = 0; i <= questionListInQuestion.Count; i++)
                 currentQuestionComboBox.Items.Add((i + 1).ToString());
 
+            if (currentIndex > questionListInQuestion.Count)
+                currentIndex = questionListInQuestion.Count;
+            currentQuestionComboBox.SelectedIndex = currentIndex;
+            updateQuestionTextBlock();
             toggleButtonVisibility();
 
         }
@@ -209,7 +282,7 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
                 { "dateOfBirth", patient!.dateOfBirth.ToString() },
                 { "age", patient.age },
                 { "Gender", patient.gender.ToString() },
-                { "Questions", questionList },
+                { "Questions", teacherQuestionList },
                 { "AdministratorCode", K.adminKey.ToString() }
             };
             collection.SetAsync(patientData);
@@ -227,28 +300,10 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
         //Additional functions
         bool questionIsValid()
         {
-            if (questionTextBlock.Text.Length > 0)
+            if (questionTextBlock.Text.Length >= 0)
                 return true;
             MessageBox.Show("Error! Invalid value detected in the question block");
             return false;
-        }
-
-        List<String> generateDefaultQuestionList()
-        {
-            List<String> preloadQuestionList = new List<String>();
-
-            if (File.Exists(Directory.GetCurrentDirectory() + "/PreloadQuestions.txt"))
-            {
-                string[] lines = File.ReadAllLines(Directory.GetCurrentDirectory() + "/PreloadQuestions.txt");
-                foreach (string line in lines)
-                {
-                    int dot = line.IndexOf('.');
-                    preloadQuestionList.Add(line.Substring(dot + 1));
-                }
-                currentQuestionComboBox.SelectedIndex = 0;
-
-            }
-            return preloadQuestionList;
         }
 
     }
