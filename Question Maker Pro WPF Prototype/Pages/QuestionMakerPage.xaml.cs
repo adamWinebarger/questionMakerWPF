@@ -33,7 +33,7 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
             parentQuestionList = new List<string>();
         int currentIndex = 0;
         TestTypeSelection currentSelectedTestType = TestTypeSelection.Teacher;
-        bool saveButtonPressed = false;
+        bool parentQuestionListSaved = false, teacherQuestionListSaved = false;
 
         public QuestionMakerPage(Patient patient)
         {
@@ -42,6 +42,7 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
             //MessageBox.Show(patient.lastname);
             this.preloadQuestion = false;
             teacherQuestionList = generateDefaultQuestionList("TeacherPreloadQuestions");
+            parentQuestionList = generateDefaultQuestionList("ParentPreloadQuestions");
             populatequestionComboBox();
             currentQuestionComboBox.SelectedIndex = 0;
         }
@@ -82,6 +83,24 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
             } else if (tag == removeButton.Content)
             {
                 removeQuestion();
+            } else if (tag == saveButton.Content)
+            {
+                saveQuestionList2File();
+            } else if (tag == nextButton.Content)
+            {
+                var questionListInQuestion = (teacherRadioButton.IsChecked == true) ? teacherQuestionList : parentQuestionList;
+                if (currentQuestionComboBox.SelectedIndex < questionListInQuestion.Count)
+                {
+                    currentQuestionComboBox.SelectedIndex = ++currentIndex;
+                }
+                updateQuestionTextBlock();
+            } else if (tag == backButton.Content)
+            {
+                if (currentQuestionComboBox.SelectedIndex > 0)
+                {
+                    currentQuestionComboBox.SelectedIndex = --currentIndex;
+                }
+                updateQuestionTextBlock();
             }
         }
 
@@ -131,11 +150,17 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
 
             if (preloadQuestion)
             {
-                using (StreamWriter writer = File.CreateText(Directory.GetCurrentDirectory() + "Questions/TeacherPreloadQuestions.txt"))
-                    for (int i = 0; i < teacherQuestionList.Count; i++)
+                saveQuestionList2File();
+                if (!teacherQuestionListSaved || !parentQuestionListSaved)
+                {
+                    if (MessageBox.Show("It looks like you have only saved one of your question lists. Would you like to save the other one?", "Notice",
+                        MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                     {
-                        writer.WriteLine(String.Format("{0}. {1}", i+1, teacherQuestionList[i]));
+                        currentSelectedTestType = (parentRadioButton.IsChecked == true) ? TestTypeSelection.Teacher : TestTypeSelection.Parent;
                     }
+                    saveQuestionList2File();
+                }
+
             } else
             {
                 //This is where we will be making a call to load data into our firebase database
@@ -222,6 +247,25 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
             return preloadQuestionList;
         }
 
+        void saveQuestionList2File()
+        {
+            string whichFile2Save = (teacherRadioButton.IsChecked == true) ?
+                "TeacherPreloadQuestions" : "ParentPreloadQuestions";
+            var questionListInQuestion = (teacherRadioButton.IsChecked == true) ?
+                teacherQuestionList : parentQuestionList;
+
+            using (StreamWriter writer = File.CreateText(Directory.GetCurrentDirectory() + "/Questions/"
+                + whichFile2Save + ".txt"))
+                for (int i = 0; i < questionListInQuestion.Count; i++)
+                {
+                    writer.WriteLine(String.Format("{0}. {1}", i + 1, questionListInQuestion[i]));
+                }
+            if (teacherRadioButton.IsChecked == true)
+                teacherQuestionListSaved = true;
+            else
+                parentQuestionListSaved = true;
+        }
+
         void updateQuestionTextBlock()
         {
            
@@ -270,9 +314,9 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
             //var jsonText = JsonDocument.Parse(File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"cloudfire_schoolquestiontester.json")).RootElement.GetProperty("private_key_id");
             //MessageBox.Show(jsonText.ToString());
 
-            Google.Cloud.Firestore.DocumentReference collection = K.database.Collection("Patients")
-                .Document( String.Format("{0}, {1} ({2})", patient!.lastname, 
-                patient!.firstname, patient!.patientCode));
+            string patientString = String.Format("{0}, {1} ({2})", patient!.lastname, patient!.firstname, patient!.patientCode);
+
+            Google.Cloud.Firestore.DocumentReference collection = K.database.Collection("Patients").Document(patientString);
             //MessageBox.Show(patient!.patientCode);
             Dictionary<string, object> patientData = new()
             {
@@ -282,11 +326,15 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
                 { "dateOfBirth", patient!.dateOfBirth.ToString() },
                 { "age", patient.age },
                 { "Gender", patient.gender.ToString() },
-                { "Questions", teacherQuestionList },
-                { "AdministratorCode", K.adminKey.ToString() }
+                { "Questions", new Dictionary<string, List<string>>() {
+                    { "teacherQuestions", teacherQuestionList },
+                    { "parentQuestions", parentQuestionList }
+                }},
+                { "AdministratorCode", K.adminKey.ToString() },
+                { "teacherCanViewParentAnswers", false }
             };
             collection.SetAsync(patientData);
-            
+
             MessageBox.Show("data added successfully");
             NavigationService.RemoveBackEntry();
             NavigationService.GoBack(); 
