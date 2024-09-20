@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Question_Maker_Pro_WPF_Prototype
-build_property.ProjectDir = C:\Users\adamk\source\repos\Question Maker Pro WPF Prototype\Question Maker Pro WPF Prototype\
+build_property.ProjectDir = C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -53,3 +53,59 @@ C:\Users\adamk\source\repos\Question Maker Pro WPF Prototype\Question Maker Pro 
 C:\Users\adamk\source\repos\Question Maker Pro WPF Prototype\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype.csproj.CopyComplete
 C:\Users\adamk\source\repos\Question Maker Pro WPF Prototype\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Pages\PatientDataPage.g.cs
 C:\Users\adamk\source\repos\Question Maker Pro WPF Prototype\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Pages\PatientDataPage.baml
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Question Maker Pro WPF Prototype.exe
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\cloudfire_schoolquestiontester.json
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Question Maker Pro WPF Prototype.deps.json
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Question Maker Pro WPF Prototype.runtimeconfig.json
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Question Maker Pro WPF Prototype.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Question Maker Pro WPF Prototype.pdb
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Google.Api.CommonProtos.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Google.Api.Gax.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Google.Api.Gax.Grpc.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Google.Apis.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Google.Apis.Auth.PlatformServices.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Google.Apis.Auth.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Google.Apis.Core.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Google.Cloud.Firestore.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Google.Cloud.Firestore.V1.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Google.Cloud.Location.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Google.LongRunning.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Google.Protobuf.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Grpc.Auth.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Grpc.Core.Api.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Grpc.Net.Client.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Grpc.Net.Common.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\bin\Debug\net6.0-windows\System.Linq.Async.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype.csproj.AssemblyReference.cache
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Pages\LoginPage.g.cs
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Pages\NewTesterInfoPage.g.cs
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Pages\PatientDataPage.g.cs
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Pages\PreloadQuestionsPage.g.cs
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Pages\QuestionMakerPage.g.cs
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype_Content.g.cs
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype_MarkupCompile.cache
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype_MarkupCompile.lref
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Pages\LoginPage.baml
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Pages\NewTesterInfoPage.baml
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Pages\PatientDataPage.baml
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Pages\PreloadQuestionsPage.baml
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Pages\QuestionMakerPage.baml
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype.g.resources
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype.AssemblyInfoInputs.cache
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype.AssemblyInfo.cs
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype.csproj.CoreCompileInputs.cache
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype.sourcelink.json
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype.csproj.CopyComplete
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\refint\Question Maker Pro WPF Prototype.dll
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype.pdb
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\Question Maker Pro WPF Prototype.genruntimeconfig.cache
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\ref\Question Maker Pro WPF Prototype.dll

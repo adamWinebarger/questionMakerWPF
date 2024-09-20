@@ -316,12 +316,12 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
             Random rand = new();
 
             string patientString = String.Format("{0}, {1} ({2})", patient!.lastname, patient!.firstname, patient!.patientCode),
-                parentCode = patient!.firstname.ToString().ToUpper() + patient!.lastname.ToString().ToUpper() + patient!.patientCode.Substring(0, rand.Next(6, 11));
+                parentCode = patient!.firstname[0].ToString().ToUpper() + patient!.lastname[0].ToString().ToUpper() + patient!.patientCode.Substring(0, rand.Next(6, 11));
 
             int randomLength2 = rand.Next(6, 11);
 
-            string teacherCode = patient.firstname.ToString().ToUpper() + patient.lastname.ToString().ToUpper()
-                + patient.patientCode.Substring(patient!.patientCode.Length - randomLength2, patient!.patientCode.Length);
+            string teacherCode = patient.firstname[0].ToString().ToUpper() + patient.lastname[0].ToString().ToUpper()
+                + patient!.patientCode.Substring(patient!.patientCode.Length - randomLength2, randomLength2);
 
             Google.Cloud.Firestore.DocumentReference collection = K.database.Collection("Patients").Document(patientString);
             //MessageBox.Show(patient!.patientCode);

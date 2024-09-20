@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+o0bFTGYTsQPxNsN4smc5wwpv+OkNYR3VXWTNKlDVru8ZaejIyE5G26EqUWbMM2C8RJfSf6lGGjjBrONDmXAqA==",
+  "dgSpecHash": "ucJGqRug3yTB0OlbtejDO3xfDuWf+Y0oFgWseauUNErgM3cs29jJftctE64Q0NU3XSXJYjQI1257EhNIZz+aJw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\adamk\\source\\repos\\Question Maker Pro WPF Prototype\\Question Maker Pro WPF Prototype\\Question Maker Pro WPF Prototype.csproj",
+  "projectFilePath": "C:\\Users\\adamk\\source\\repos\\questionMakerWPF\\Question Maker Pro WPF Prototype\\Question Maker Pro WPF Prototype.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adamk\\.nuget\\packages\\google.api.commonprotos\\2.7.0\\google.api.commonprotos.2.7.0.nupkg.sha512",
     "C:\\Users\\adamk\\.nuget\\packages\\google.api.gax\\4.3.1\\google.api.gax.4.3.1.nupkg.sha512",
