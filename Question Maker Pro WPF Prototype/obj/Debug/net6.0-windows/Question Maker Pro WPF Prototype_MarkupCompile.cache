@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\adamk\source\repos\Question Maker Pro WPF Prototype\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Debug\net6.0-windows\
 Question_Maker_Pro_WPF_Prototype
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\adamk\source\repos\Question Maker Pro WPF Prototype\Question Maker Pro WPF Prototype\App.xaml
-6306310708
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\App.xaml
+132024620486
 11243017844
-12-2033319463
-2151903612547
-MainWindow.xaml;Pages\LoginPage.xaml;Pages\NewTesterInfoPage.xaml;Pages\PatientDataPage.xaml;Pages\PreloadQuestionsPage.xaml;Pages\QuestionMakerPage.xaml;
+24-1485597932
+2451192711080
+MainWindow.xaml;Pages\LoginPage.xaml;Pages\NewTesterInfoPage.xaml;Pages\PatientDataPage.xaml;Pages\PatientViewPage.xaml;Pages\PreloadQuestionsPage.xaml;Pages\QuestionMakerPage.xaml;Pages\QuestionMakerPage2.xaml;Pages\ReportDataVizPage.xaml;Windows\AddQuestionWindow.xaml;Windows\CreateAccountWindow.xaml;Windows\QuestionnaireViewerWindow.xaml;Windows\saveQuestionnaireWindow.xaml;
 
 False
 

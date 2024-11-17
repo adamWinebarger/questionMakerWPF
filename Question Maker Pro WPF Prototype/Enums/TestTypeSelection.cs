@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Question_Maker_Pro_WPF_Prototype.Enums
 {
-    enum TestTypeSelection
+    public enum TestTypeSelection
     {
         Parent,
         Teacher

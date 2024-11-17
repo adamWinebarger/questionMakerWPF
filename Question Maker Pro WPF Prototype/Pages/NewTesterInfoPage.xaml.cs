@@ -32,10 +32,14 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
 
             Patient newPatient = new(lastNameTextBox.Text, firstNameTextBox.Text, getGender(), DateOnly.FromDateTime(dobPicker.SelectedDate!.Value.Date));
             //MessageBox.Show("Success");
-            NavigationService.Navigate(new QuestionMakerPage(newPatient), UriKind.Relative);
+            NavigationService.Navigate(new QuestionMakerPage2(newPatient), UriKind.Relative);
             
         }
 
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
         private Gender getGender()
         {
             if (maleRadioButton.IsChecked == true)
@@ -66,6 +70,5 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
 
             return true;
         }
-
     }
 }

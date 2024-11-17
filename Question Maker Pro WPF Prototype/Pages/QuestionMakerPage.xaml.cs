@@ -280,7 +280,7 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
 
         private void questionComboBoxSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            //So 'here' we need to differentiae whether a selected item belongs to the parent questions or the teac
             if (currentQuestionComboBox.HasItems)
                 currentIndex = currentQuestionComboBox.SelectedIndex;
             updateQuestionTextBlock();
@@ -313,31 +313,22 @@ namespace Question_Maker_Pro_WPF_Prototype.Pages
         {
             //var jsonText = JsonDocument.Parse(File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"cloudfire_schoolquestiontester.json")).RootElement.GetProperty("private_key_id");
             //MessageBox.Show(jsonText.ToString());
-            Random rand = new();
-
-            string patientString = String.Format("{0}, {1} ({2})", patient!.lastname, patient!.firstname, patient!.patientCode),
-                parentCode = patient!.firstname.ToString().ToUpper() + patient!.lastname.ToString().ToUpper() + patient!.patientCode.Substring(0, rand.Next(6, 11));
-
-            int randomLength2 = rand.Next(6, 11);
-
-            string teacherCode = patient.firstname.ToString().ToUpper() + patient.lastname.ToString().ToUpper()
-                + patient.patientCode.Substring(patient!.patientCode.Length - randomLength2, patient!.patientCode.Length);
-
-            Google.Cloud.Firestore.DocumentReference collection = K.database.Collection("Patients").Document(patientString);
+            
+            Google.Cloud.Firestore.DocumentReference collection = K.firestoreDB.Collection("Patients").Document(patient!.patientPath);
             //MessageBox.Show(patient!.patientCode);
             Dictionary<string, object> patientData = new()
             {
-                { "patientCode", patient!.patientCode },
-                { "parentCode",  parentCode},
-                {"teacherCode", teacherCode},
-                { "lastName", patient!.lastname },
-                { "firstName", patient!.firstname },
-                { "dateOfBirth", patient!.dateOfBirth.ToString() },
+                { "patientCode", patient.patientCode },
+                { "parentCode",  patient.parentCode},
+                {"teacherCode", patient.teacherCode},
+                { "lastName", patient.lastname },
+                { "firstName", patient.firstname },
+                { "dateOfBirth", patient.dateOfBirth.ToString() },
                 { "age", patient.age },
                 { "Gender", patient.gender.ToString() },
                 { "teacherQuestions", teacherQuestionList },
                 { "parentQuestions", parentQuestionList },
-                { "AdministratorCode", K.adminKey.ToString() },
+                { "AdministratorCode", K.adminKey.ToString() }, //This will need to be changed a little later on.
                 { "teacherCanViewParentAnswers", false }
             };
             collection.SetAsync(patientData);

@@ -14,7 +14,7 @@ namespace Question_Maker_Pro_WPF_Prototype
     public static class K
     {
 
-        public static FirestoreDb database;
+        public static FirestoreDb? firestoreDB = null;
 
         //public static string firestorePrivKeyID = (string)JObject.Parse(AppDomain.CurrentDomain.BaseDirectory + @"cloudfire_schoolquestiontester.json")["private_key_id"]!;
         public static string adminKey = File.Exists(AppDomain.CurrentDomain.BaseDirectory + @"cloudfire_schoolquestiontester.json") ? 

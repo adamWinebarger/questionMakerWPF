@@ -1,0 +1,20 @@
+﻿Question Maker Pro WPF Prototype
+
+
+winexe
+C#
+.cs
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\obj\Release\net6.0-windows\
+Question_Maker_Pro_WPF_Prototype
+none
+false
+TRACE;RELEASE;NET;NET6_0;NETCOREAPP
+C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\App.xaml
+6306310708
+11243017844
+12-2033319463
+194-1977528901
+MainWindow.xaml;Pages\LoginPage.xaml;Pages\NewTesterInfoPage.xaml;Pages\PatientDataPage.xaml;Pages\PreloadQuestionsPage.xaml;Pages\QuestionMakerPage.xaml;
+
+True
+
