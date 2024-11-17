@@ -1,0 +1,39 @@
+﻿<Window x:Class="Question_Maker_Pro_WPF_Prototype.Windows.QuestionnaireViewerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Question_Maker_Pro_WPF_Prototype.Windows"
+        mc:Ignorable="d"
+        Title="QuestionnaireViewerWindow" Height="450" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.25*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock x:Name="reportTitleTextBlock" Text="Report for Remmy Remmington" HorizontalAlignment="Center" Margin="25" TextWrapping="Wrap" FontWeight="Bold"/>
+        <DataGrid x:Name="questionnaireDataGrid" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="25" 
+             AutoGenerateColumns="False" VerticalScrollBarVisibility="Auto">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridRow}">
+                    
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Question" Width="0.75*" Binding="{Binding Key}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextWrapping" Value="Wrap"/>
+                            <Setter Property="Padding" Value="2"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Answer" Width="0.4*" Binding="{Binding Value}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="okButton" Content="Ok" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="50" Margin="25" Padding="5 1" Click="button_click"/>
+    </Grid>
+</Window>

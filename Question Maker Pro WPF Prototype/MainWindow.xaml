@@ -9,17 +9,17 @@
         MinHeight="600" MinWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="0"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
         <StackPanel Background="#e9ecef">
             <Label Content="NavBar" HorizontalAlignment="Center" Margin="10, 25"/>
             <Button  x:Name="homeButton" Content="Home" HorizontalAlignment="Center" Margin="10, 35"  Width="Auto" Height="Auto" Padding="5,5,5,5" Click="button_Click"/>
-            <Button x:Name="newTesterButton" Content="Create New Tester" HorizontalAlignment="Center" Margin="10, 35" Width="Auto" Height="Auto" Padding="5,5,5,5" Click="button_Click"/>
-            <Button x:Name="viewTestingDataButton" Content="View Patient Data" HorizontalAlignment="Center" Margin="10, 35"  Width="Auto" Height="Auto" Padding="5,5,5,5" Click="button_Click"/>
-            <Button x:Name="preloadQuestionsButton" Content="Prebuild Question List" HorizontalAlignment="Center" Margin="10, 35"  Width="Auto" Height="Auto" Padding="5,5,5,5" Click="button_Click"/>
-            <Button Content="Button" HorizontalAlignment="Center" Margin="10, 35"  Width="Auto" Height="Auto" Padding="5,5,5,5"/>
+            <Button x:Name="newTesterButton" Content="Create Child" HorizontalAlignment="Center" Margin="10, 35" Width="Auto" Height="Auto" Padding="5,5,5,5" Click="button_Click"/>
+            <Button x:Name="viewTestingDataButton" Content="View Child Data" HorizontalAlignment="Center" Margin="10, 35"  Width="Auto" Height="Auto" Padding="5,5,5,5" Click="button_Click"/>
+            <Button x:Name="preloadQuestionsButton" Content="Prebuild Questions List" HorizontalAlignment="Center" Margin="10, 35"  Width="Auto" Height="Auto" Padding="5,5,5,5" Click="button_Click"/>
+            <Button x:Name="testButton" Content="Button" HorizontalAlignment="Center" Margin="10, 35"  Width="Auto" Height="Auto" Padding="5,5,5,5" Click="button_Click"/>
 
         </StackPanel>
 

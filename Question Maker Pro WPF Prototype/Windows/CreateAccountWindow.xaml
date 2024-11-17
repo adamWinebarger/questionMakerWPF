@@ -1,0 +1,55 @@
+﻿<Window x:Class="Question_Maker_Pro_WPF_Prototype.Windows.CreateAccountWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Question_Maker_Pro_WPF_Prototype.Windows"
+        mc:Ignorable="d"
+        Title="CreateAccountWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Account Creation" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20pt"/>
+
+        <Border BorderBrush="DarkGray" Grid.Row="1" BorderThickness="1" CornerRadius="0" Margin="25">
+            <!-- Scrollviewer makes the thing scrollable-->
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="10" Margin="5" BorderThickness="10pt" BorderBrush="Blue">
+
+                <!-- Stack Panel is what we'll use to arrange the fields-->
+                <StackPanel Margin="10">
+                    <!-- Looks like the ideal pattern here should be
+            Textblock Title
+            Text Block      -->
+
+                    <Label Content="Email"/>
+                    <TextBox x:Name="emailTextBox" Width="250" HorizontalAlignment="Left" Margin="7 0 0 10"/>
+
+                    <Label Content="Password"/>
+                    <PasswordBox x:Name="passwordEntry" Width="250" HorizontalAlignment="Left" Margin="7 0 0 10"/>
+
+                    <Label Content="Confirm Password"/>
+                    <PasswordBox x:Name="confirmPasswordEntry" Width="250" HorizontalAlignment="Left" Margin="7 0 0 10"/>
+
+                    <Label Content="First Name"/>
+                    <TextBox x:Name="firstNameTextbox" Width="250" HorizontalAlignment="Left" Margin="7 0 0 10"/>
+
+                    <Label Content="Last Name"/>
+                    <TextBox x:Name="lastNameTextbox" Width="250" HorizontalAlignment="Left" Margin="7 0 0 10"/>
+
+                    <Label Content="Organization"/>
+                    <TextBox x:Name="organizationTextBox" Width="250" HorizontalAlignment="Left" Margin="7 0 0 10"/>
+
+                    <UniformGrid Columns="2" HorizontalAlignment="Right" Margin="5 20 25 5">
+                        <Button x:Name="submitButton" Content="Submit" Padding="10 4" Margin="0 0 5 0" Click="button_click"/>
+                        <Button x:Name="cancelButton" Content="Cancel" Padding="10 4" Margin="5 0 0 0" Click="button_click"/>
+                    </UniformGrid>
+
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Window>

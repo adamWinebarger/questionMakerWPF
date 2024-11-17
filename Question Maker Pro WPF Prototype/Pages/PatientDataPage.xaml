@@ -10,12 +10,44 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.3*"/>
-            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.25*"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Column="1" Content="Tester Information" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36pt" FontWeight="Bold"/>
-        <DataGrid Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="34,60,185,38"/>
+        <Label Grid.Row="0" Content="Patient View" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30pt" FontWeight="Bold"/>
+        <DataGrid x:Name="patientDataGrid" Grid.Row="1"  Margin="25" SelectionChanged="patientDataGrid_selectionChanged" IsReadOnly="True" 
+                  AutoGenerateColumns="False" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Stretch">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <EventSetter Event="MouseDoubleClick" Handler="onRowDoubleClick"/>
+                    <EventSetter Event="Selected" Handler="onRowSelection"/>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="First Name" Binding="{Binding firstname}" Width="*"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding lastname}" Width="*"/>
+                <DataGridTextColumn Header="Age" Binding="{Binding age}" Width="0.5*"/>
+                <DataGridTextColumn Header="Date of Birth" Binding="{Binding dateOfBirth}" Width="0.75*"/>
+                <DataGridTextColumn Header="Gender" Binding="{Binding gender}" Width="0.7*"/>
+                <DataGridTextColumn Header="Parent Code" Binding="{Binding parentCode}" Width="*"/>
+                <DataGridTextColumn Header="Teacher Code" Binding="{Binding teacherCode}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- I actually have no idea what I'm going to put here right now-->
+        <UniformGrid Grid.Row="2" Rows="2" Columns="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="viewPatientButton" Content="View Patient" Padding="5 1" Margin="5 5" Click="button_click"/>
+            <Button x:Name="copyParentCodeButton" Content="Copy Parent Code" Padding="5 1" Margin="5" Click="button_click"/>
+            <Button x:Name="copyTeacherCodeButton" Content="Copy Teacher Code" Padding="5 1" Margin="5" Click="button_click"/>
+            <Button x:Name="EditTeseterQuestionnaireButton" Content="Edit Patient Questions" Padding="5 2" Margin="5" Click="button_click"/>
+
+            <Button x:Name="newTesterButton" Content="Create New Patient" Padding="5 3" Margin="5" Click="button_click"/>
+            <Button x:Name="preloadQuestionnaireButton" Content="Preload Questionnaire" Padding="5 2" Margin="5" Click="button_click"/>
+            <Button x:Name="logoutButton" Content="Logout" Padding="5 2" Margin="5" Click="button_click"/>
+            <Button x:Name="exitButton" Content="Exit" Padding="5 2" Margin="5" Click="button_click"/>
+        </UniformGrid>
 
 
     </Grid>

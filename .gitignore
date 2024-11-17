@@ -3,4 +3,5 @@
 # This contains our private key for hooking up to the firebase database. Since we don't want that out in the world
 # we should probably include it here
 
-cloudfire_schoolquestiontester.json
+*/cloudfire_schoolquestiontester.json
+.vs

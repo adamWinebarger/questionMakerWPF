@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\adamk\source\repos\questionMakerWPF\Question Maker Pro WPF Prototype\App.xaml
-7-1129053073
+132024620486
 11243017844
-15-1663023087
-215-1748986470
-MainWindow.xaml;Pages\LoginPage.xaml;Pages\NewTesterInfoPage.xaml;Pages\PatientDataPage.xaml;Pages\PreloadQuestionsPage.xaml;Pages\QuestionMakerPage.xaml;Pages\QuestionMakerPage2.xaml;
+26189801917
+2451192711080
+MainWindow.xaml;Pages\LoginPage.xaml;Pages\NewTesterInfoPage.xaml;Pages\PatientDataPage.xaml;Pages\PatientViewPage.xaml;Pages\PreloadQuestionsPage.xaml;Pages\QuestionMakerPage.xaml;Pages\QuestionMakerPage2.xaml;Pages\ReportDataVizPage.xaml;Windows\AddQuestionWindow.xaml;Windows\CreateAccountWindow.xaml;Windows\QuestionnaireViewerWindow.xaml;Windows\saveQuestionnaireWindow.xaml;
 
 True
 

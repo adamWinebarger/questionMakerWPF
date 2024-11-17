@@ -36,9 +36,11 @@
             <RadioButton x:Name="maleRadioButton" Grid.Column="2" Content="Male" HorizontalAlignment="Left" Margin="71,65,25,0" VerticalAlignment="Top" FontSize="12pt"/>
             <RadioButton x:Name="femaleRadioButton" Grid.Column="2" Content="Female" HorizontalAlignment="Left" Margin="71,90,25,0" VerticalAlignment="Top" FontSize="12pt"/>
             <RadioButton x:Name="otherRadioButton" Grid.Column="2" Content="Other" HorizontalAlignment="Left" Margin="71,115,25,0" VerticalAlignment="Top" FontSize="12pt"/>
-            <Button x:Name="submitButton" Grid.Column="2" Content="Submit" HorizontalAlignment="Center" Margin="25,285,25,25" Padding="2" VerticalAlignment="Top" Click="submitButton_Click"/>
-
-
+            
+            <UniformGrid Grid.Row="1" Grid.Column="2" Rows="1" Columns="2" HorizontalAlignment="Center" Margin="5,285,5,25">
+                <Button x:Name="submitButton" Content="Submit" Margin="5" Height="25" Width="75" Padding="5" Click="submitButton_Click"/>
+                <Button x:Name="backButton" Content="Back" Margin="5" Padding="5" Height="25" Width="75" Click="backButton_Click"/>
+            </UniformGrid>
 
         </Grid>
 

@@ -16,6 +16,9 @@
     <Compile Update="Pages\PatientDataPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\PatientViewPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\PreloadQuestionsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -23,6 +26,21 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\QuestionMakerPage2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\ReportDataVizPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\AddQuestionWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\CreateAccountWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\QuestionnaireViewerWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\saveQuestionnaireWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -39,6 +57,9 @@
     <Page Update="Pages\PatientDataPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\PatientViewPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\PreloadQuestionsPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -46,6 +67,21 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\QuestionMakerPage2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\ReportDataVizPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\AddQuestionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\CreateAccountWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\QuestionnaireViewerWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\saveQuestionnaireWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
